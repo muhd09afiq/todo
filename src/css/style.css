@@ -1,3 +1,365 @@
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: "Lato";
+  src: url("../font/Lato/Lato-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Lato-Bold";
+  src: url("../font/Lato/Lato-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Lato-Black";
+  src: url("../font/Lato/Lato-Black.ttf");
+}
+
+@font-face {
+  font-family: "Lato-Italic";
+  src: url("../font/Lato/Lato-LightItalic.ttf");
+}
+
+body {
+  font-family: "Lato";
+  display: flex;
+  justify-content: center;
+  background-color: #f0f9ff;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 16px;
+}
+
+input,
+textarea,
+select,
+button {
+  width: 150px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 8px;
+  background-color: white;
+  box-shadow: -1px 3px 4px #2b2a2a;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #0ea5e9;
+  margin: 8px;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.wrapper {
+  height: 100vh;
+  width: clamp(1200px, 100%, 1800px);
+  display: grid;
+  grid-template-columns: clamp(200px, 25%, 400px) 1fr;
+}
+
+nav {
+  padding-left: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 96px;
+}
+
+h1 {
+  font-family: "Lato-Black";
+  font-size: 24px;
+}
+
+.action {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+/* button */
+.create-project {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 32px;
+  margin: 16px;
+  box-shadow: 0 3px 6px #2b2a2a;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  padding: 24px;
+  background-color: white;
+}
+
+.create-project:active {
+  box-shadow: 0 1px 3px #2b2a2a;
+}
+
+.add-project-icon {
+  width: 20px;
+  height: 20px;
+}
+
+li {
+  background-color: rgb(211, 209, 209);
+  border-radius: 5px;
+  box-shadow: -1px 3px 4px #2b2a2a;
+  width: 256px;
+  height: 64px;
+  margin-bottom: 24px;
+  display: grid;
+  place-items: center;
+}
+
+li:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+li:active {
+  transform: scale(1.05);
+}
+
+.li-selected {
+  background-color: #0284c7;
+}
+
+.edit-task {
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.edit-project,
+.delete-project-btn,
+.add-task-icon {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.add-task-btn {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  max-width: 96px;
+  height: 32px;
+  box-shadow: 0 4px 6px #2b2a2a;
+  border-radius: 10px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  margin-left: 16px;
+  padding: 24px;
+  padding-left: 16px;
+  background-color: white;
+}
+
+.add-task-btn:active {
+  box-shadow: 0 1px 3px #2b2a2a;
+}
+
+.add-task-btn:hover,
+.create-project:hover {
+  transform: scale(1.1);
+}
+
+.add-task-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.add-task-text,
+.add-project-text {
+  padding-right: 8px;
+}
+
+main {
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.project {
+  width: clamp(500px, 80%, 1000px);
+}
+
+.project-container {
+  display: grid;
+  margin-bottom: 24px;
+}
+
+.project-top-container {
+  display: flex;
+  align-items: center;
+}
+
+.project-title {
+  font-size: 32px;
+  font-family: "Lato-Bold";
+  padding: 8px;
+}
+
+.project-description {
+  padding: 8px;
+  font-size: 24px;
+  color: rgb(80, 79, 79);
+}
+
+p.toBeRemove {
+  margin: 16px;
+}
+
+#toBeRemove {
+  font-family: "Lato-Bold";
+}
+
+#delete-project-confirmation {
+  padding: 32px;
+  box-shadow: 0px 6px 20px 0px hsl(225, 87%, 12%);
+}
+
+#yesDelete {
+  background-color: #f43f5e;
+}
+
+.edit-project {
+  margin-left: 32px;
+  margin-right: 8px;
+}
+
+.task-basic-view {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.task-action-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.task-detail-container {
+  padding: 16px;
+}
+
+.task-container {
+  border: 1px solid #333333;
+  line-height: 1.5;
+  width: 100%;
+  cursor: pointer;
+
+  box-shadow: inset 0 1px 0 hsl(225, 89%, 75%);
+  box-shadow: 0 1px 3px hsl(225, 87%, 12%);
+  margin-bottom: 24px;
+  border-radius: 5px;
+}
+
+.task-title-container {
+  display: flex;
+}
+
+.task-title {
+  flex-grow: 1;
+  font-family: "Lato-Black";
+}
+
+.task-description {
+  font-family: "Lato-Bold";
+  padding: 12px;
+  font-size: 24px;
+}
+
+.task-due {
+  font-family: "Lato-Italic";
+}
+
+.due-until {
+  font-family: "Lato-Bold";
+}
+
+.task-priority {
+  display: flex;
+  margin: 12px;
+}
+
+.task-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.edit-task-btn,
+.task-delete-btn {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+
+/* Form */
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 16px;
+}
+
+dialog {
+  border-radius: 10px;
+  box-shadow: 0 15px 35px hsla(0, 0%, 0%, 0.2);
+  border: 1px solid #ccc;
+}
+
+.task-dialog,
+.edit-task-dialog {
+  min-width: 400px;
+}
+
+label {
+  display: block;
+  font-size: 20px;
+  margin: 12px;
+}
+
+input,
+textarea {
+  min-width: 350px;
+  padding: 12px;
+  border-radius: 5px;
+  box-shadow: inset 0 2px 1px 0px #7f8990;
+}
+
+select {
+  border-radius: 5px;
+  box-shadow: 0px 3px 1px 1px #7f8990;
+  width: 100px;
+}
+
+textarea {
+  height: 200px;
+}
+
+input#project-description {
+  height: 250px;
+}

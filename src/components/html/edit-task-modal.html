@@ -1,0 +1,31 @@
+<dialog class="edit-task-dialog">
+  <form method="dialog" id="edit-task-form" action="">
+    <div class="task-title-form">
+      <label for="task-title">Task:*</label>
+      <input type="text" name="task-title" id="task-title" required />
+    </div>
+    <div class="task-description-form">
+      <label for="task-description">Notes:</label>
+      <textarea name="task-description" id="task-description"></textarea>
+    </div>
+    <div class="task-due">
+      <label for="task-due">Due Date:*</label>
+      <input
+        type="date"
+        name="task-due"
+        id="task-due"
+        required
+        value="2024-05-05"
+      />
+    </div>
+    <div class="task-priority">
+      <label for="task-priority">Priority:*</label>
+      <select name="task-priority" id="task-priority">
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+    </div>
+    <button type="submit">Save Task</button>
+  </form>
+</dialog>
